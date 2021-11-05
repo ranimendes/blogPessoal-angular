@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private rota: Router
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    if(environment.token == ''){
+      this.rota.navigate(['/entrar'])
+    }
   }
 
 }

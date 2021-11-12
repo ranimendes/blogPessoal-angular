@@ -1,6 +1,6 @@
 export class UsuarioLogin{
 
-  public id: number;
+  public usuarioId: number;
   public nome: string;
   public usuario: string;
   public senha: string;

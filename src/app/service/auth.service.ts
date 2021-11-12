@@ -20,6 +20,10 @@ return this.http.post<UsuarioLogin>('https://blogpessoalrani.herokuapp.com/usuar
     return this.http.post<Usuario>('https://blogpessoalrani.herokuapp.com/usuarios/cadastrar', user)
   }
 
+  atualizar(user: Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>('https://blogpessoalrani.herokuapp.com/usuarios/atualizar', user, this.token)
+  }
+
   getByIdUser(id: number): Observable<Usuario>{
     return this.http.get<Usuario>(`https://blogpessoalrani.herokuapp.com/usuarios/${id}`, this.token)
   }
